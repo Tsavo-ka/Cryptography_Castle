@@ -1,7 +1,7 @@
 # Vigenere-Cipher
 A Python Vigenere Cipher Generator for teaching/analysis purposes. 
 
-This code was written using only basic python coding logic- no fancy modules- and is meant as a tool for teaching intermediate/advanced python coding logic
+This code was written using only basic python coding logic and one simple module and is meant as a tool for teaching python coding logic
 
 Comments, suggestions, and critiques are very much appreciated
 
