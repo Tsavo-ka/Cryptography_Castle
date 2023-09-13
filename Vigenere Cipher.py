@@ -8,7 +8,9 @@ for l in letters:
     counter += 1
 
 def key_build(text, key):
-    # This function will stretch or compress the user's key to match the length of the text, accounting for special characters
+    '''
+    This function will stretch or compress the user's key to match the length of the text, accounting for special characters
+    '''
     new = ""
     ind = 0
     
@@ -28,7 +30,9 @@ def key_build(text, key):
     return new
 
 def encrypt(text, key):
-    # This function takes in the user's text and DECRYPTS it against the user's key, returning cypher text
+    '''
+    This function takes in the user's text and ENCRYPTS it against the user's key, returning cypher text
+    '''
     cypher = []
     l_text = text.lower()
     
@@ -50,7 +54,9 @@ def encrypt(text, key):
     return "".join(cypher)
 
 def decrypt(text, key):
-    
+    '''
+    This function takes in the user's text and DECRYPTS it against the user's key, returning plain text
+    '''
     plain = []
     l_text = text.lower()
     
@@ -100,20 +106,19 @@ while run:
 
     #Choose encryption or decryption function
     while True:
-        to_do = input("Hello, user. Will you be encrypting or decrypting a message? (enter 'e' or 'd'): ").lower()
-        if to_do.startswith('e') or to_do.startswith('d'):
+        operation = input("Hello, user. Will you be encrypting or decrypting a message? (enter 'e' or 'd'): ").lower()
+        if operation.startswith('e') or operation.startswith('d'):
             break
         else:
             print("\nplease enter a valid answer\n")
 
-    text = ""
-    key = ""
-
     # Take a text to encrypt/decrypt
-    while not text:
-        text = input("\nPlease input a message to encrypt/decrypt: ")
-        if not text:
-            print("\nPlease enter a message of at least 1 character")
+    while True:
+        text = input("Enter the text: ")
+        if text:
+            break
+        print('Enter a text of at least 1 alphanumeric character')
+    
 
     # Take a key for encryption/decryption
     while not key or not key.isalpha():
@@ -124,13 +129,13 @@ while run:
             print("\nYour key cannot contain numbers or special characters")
 
     # Run encryption/decryption depending on user's initial choice
-    if to_do.startswith('e'):
+    if operation.startswith('e'):
         new_text = encrypt(text, key)
     else:
         new_text = decrypt(text, key)
 
     
-    if to_do.startswith('e'):
+    if operation.startswith('e'):
         print(f"\nYour encrypted text:\n\n\t{new_text}\n")
     else:
         print(f"\nYour decrypted text:\n\n\t{new_text}\n")
