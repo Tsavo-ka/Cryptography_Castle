@@ -1,7 +1,7 @@
 Vigenere-Cipher
 
 Description:
-This Python program implements the Vigenère Cipher, a classic encryption technique, for teaching and analysis purposes. It enables users to encrypt and decrypt messages using a provided key. The code emphasizes modularity and user-friendly input handling.
+This Python program implements the Vigenère Cipher, a classic encryption technique, for teaching and code analysis purposes. It enables users to encrypt and decrypt messages using a provided key. The code emphasizes modularity and user-friendly input handling. The code also utilizes a wide variety of logic, statements, and built-in functions, making it ideal for teaching intermediate Python principles. Below is a step-by-step map of the code logic:
 
 Step 1: Import Modules and Constants
 
