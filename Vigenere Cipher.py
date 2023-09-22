@@ -6,7 +6,6 @@ def build_key(text, key):
     '''
     Stretch a key to match the length of the text
     '''
-
     # Starting blank key and beginning index
     new_key = ''
     key_index = 0
