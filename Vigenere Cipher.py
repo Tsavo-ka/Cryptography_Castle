@@ -46,8 +46,9 @@ def vigenere_cipher(text, key, decrypt=False):
             result.append(char)
 
     return ''.join(result)
-
+    
 def main():
+    # User's Choice (Encrypt or Decrypt)
     while True:
         operation = input("Hello, user. Will you be encrypting or decrypting a message? (enter 'e' or 'd'): ").lower()
 
@@ -59,19 +60,25 @@ def main():
             print("\nPlease enter 'e' for encryption or 'd' for decryption.\n")
             continue
 
-        text = input("Enter the text: ")
-        if not text:
-            print('Enter a text of at least 1 alphanumeric character.\n')
-            continue
+        # Step 5: Input Text
+        while True:
+            text = input("Enter the text: ")
+            if not any([x.isalpha() for x in text]):
+                print('Enter a text with at least 1 alphanumeric character.\n')
+            else:
+                break
 
-        key = input("\nEnter an encryption key: ")
-        if not key:
-            print("\nPlease enter a key of at least 1 character (longer key recommended).\n")
-            continue
-        elif not key.isalpha():
-            print("\nYour key cannot contain numbers or special characters.\n")
-            continue
+        # Step 6: Input Encryption Key
+        while True:
+            key = input("\nEnter an encryption key: ")
+            if not key:
+                print("\nPlease enter a key of at least 1 character (longer key recommended).\n")
+            elif not key.isalpha():
+                print("\nYour key cannot contain numbers or special characters.\n")
+            else:
+                break
 
+        # Step 7: Execute the Chosen Operation
         result = vigenere_cipher(text, key, decrypt)
         print('\nResult:', result, '\n')
 
