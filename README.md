@@ -1,61 +1,36 @@
-# Vigenere-Cipher
-A Python Vigenere Cipher Generator for teaching/analysis purposes. 
+Vigenere-Cipher
 
-This code was written using only basic python coding logic and one simple module and is meant as a tool for teaching python coding logic
+Description:
+This Python program implements the Vigenère Cipher, a classic encryption technique, for teaching and analysis purposes. It enables users to encrypt and decrypt messages using a provided key. The code emphasizes modularity and user-friendly input handling.
 
-Comments, suggestions, and critiques are very much appreciated
+Step 1: Import Modules and Constants
 
-Here is a run-through of the code's logic:
+The code starts by importing the string module, which provides the constant string.ascii_lowercase, representing all lowercase letters of the English alphabet.
 
-Step 1:
+Step 2: Build a Key Matching Text Length
 
-Import the strings module and build a list of all lowercase letters
+The build_key function is introduced to generate a key that matches the length of the input text while accounting for spaces and special characters. It evenly repeats characters from the encryption key to match the text's length.
 
-Step 2:
+Step 3: Vigenère Cipher Algorithm
 
-Run through the list and assign each letter as a dictionary key with a corresponding number value, starting at 0 and incrementing by 1 each letter
-the printed dictionary would look like this:
+The core of the Vigenère Cipher algorithm is implemented in the vigenere_cipher function. This function handles both encryption and decryption, depending on the decrypt flag.
 
-{'a': 0, 'b': 1, 'c': 2, 'd': 3, 'e': 4, 'f': 5, 'g': 6, 'h': 7, 'i': 8, 'j': 9, 'k': 10, 'l': 11, 'm': 12, 'n': 13, 'o': 14, 'p': 15, 'q': 16, 'r': 17,
-'s': 18, 't': 19, 'u': 20, 'v': 21, 'w': 22, 'x': 23, 'y': 24, 'z': 25}
+Encryption: It iterates through each character of the input text. For each alphabetic character, it calculates a shift value based on the corresponding character in the encryption key and applies the shift to produce the encrypted character. Uppercase letters are maintained as uppercase in the result.
 
-Step 3:
+Decryption: Similar to encryption, but with a reverse shift to decrypt the message. It also maintains the case of the original text.
 
-Make a function that either stretches (duplicates characters) or compresses (deletes characters) from the key to make it match the length of the text,
-accounting for spaces and special characters
+Step 4: User's Choice (Encrypt or Decrypt)
 
-Step 4:
+The program prompts the user to choose between encryption and decryption by entering 'e' or 'd'.
 
-Make a function for the Encryption process:
+Step 5: Input Text
 
-Use a for loop to iterate through every character of the text and add its ASCII (ord()) value to the number value (contained in the dictionary above of 
-the corresponding character of the encryption key. 
+The user is asked to input the text they want to encrypt or decrypt. The program validates that the input contains at least one alphanumeric character.
 
-If the ASCII value + the key value is higher than 122 (the value of 'z'), then we find the absolute value
-of (character ASCII value + key value - 123) + 97 and return the letter value of the outcome (using chr())
+Step 6: Input Encryption Key
 
-Else, we simply add the character number value to the key number value.
+The user provides an encryption key. The program validates that the key contains at least one character and only consists of alphabetic characters.
 
-Step 5:
+Step 7: Execute the Chosen Operation
 
-Make a function for the Decryption process:
-
-Ths function works exactly like the encryption one, just with a slightly different math algorithm
-
-Step 6:
-
-Let the user decide with an input whether they wish to use the encryption or the decryption algorithm
-
-Step 7:
-
-Take a text for enc/dec from the user
-
-Step 8:
-
-Take an enc/dec key from the user
-
-Step 9:
-
-Run the appropriate function
-
-fin
+The appropriate function (encryption or decryption) is called with the provided text and key. The result is displayed to the user.
