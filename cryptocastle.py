@@ -44,7 +44,7 @@ def main():
         if choice == 2:
             vigenere.main()  # Calls the Vigenère Cipher code
         if choice == 3:
-            XORcipher.main3()  # Calls the XOR Cipher code
+            XORcipher.main()  # Calls the XOR Cipher code
 
         repeat = replay()
 
